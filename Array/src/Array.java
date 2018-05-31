@@ -195,6 +195,7 @@ public class Array<T> {
         for (int i = 0; i < size; i++){
             if (data[i].equals(e)) {
                 remove(i);
+                i = i - 1;
                 array.addLast(i);
             }
         }
@@ -204,17 +205,13 @@ public class Array<T> {
     }
 
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++){
-            list.add(i+"");
-        }
-        Iterator iterator = list.iterator();
-        while (iterator.hasNext()){
-            String str = (String) iterator.next();
-            if (str.equals("1"))
-                list.remove("1");
-            System.out.println(str);
-        }
+        Array<Integer> array = new Array<Integer>();
+        array.addLast(1);
+        array.addLast(5);
+        array.addLast(1);
+        array.addLast(1);
+        array.removeAllElementOther(1);
+        System.out.println(array);
     }
 
 }
